@@ -11,9 +11,15 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.46.0",
+    "@sentry/react": "^10.10.0",
+    "@tanstack/react-query": "^5.86.0",
+    "axios": "^1.11.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router": "^7.8.2"
+    "react-hot-toast": "^2.6.0",
+    "react-router": "^7.8.2",
+    "stream-chat": "^9.19.0",
+    "stream-chat-react": "^13.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
