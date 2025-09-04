@@ -2,45 +2,31 @@ import express from "express";
 import { ENV } from "./config/env.js";
 import { connectDB } from "./config/db.js";
 import { clerkMiddleware } from "@clerk/express";
-import { serve } from "inngest/express";
 import { functions, inngest } from "./config/inngest.js";
+import { serve } from "inngest/express";
 
 const app = express();
 
-//access req body
-app.use((req, res, next) => {
-  if (req.path.startsWith("/api/inngest")) {
-    return next();
-  }
-  express.json()(req, res, next);
-});
-
-//req.auth will be avalilable in the req object
-app.use(clerkMiddleware());
-
-//allow to use ingest functions
-app.use("/api/inngest", serve({ client: inngest, functions }));
+app.use(express.json());
+app.use(clerkMiddleware()); // req.auth will be available in the request object
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.send("Hello World! 123");
 });
-console.log(
-  "INGEST_SIGNING_KEY:",
-  process.env.INGEST_SIGNING_KEY?.slice(0, 10)
-);
+
+app.use("/api/inngest", serve({ client: inngest, functions }));
 
 const startServer = async () => {
   try {
     await connectDB();
     if (ENV.NODE_ENV !== "production") {
       app.listen(ENV.PORT, () => {
-        console.log(`Server started on port ${ENV.PORT}`);
-        connectDB();
+        console.log("Server started on port:", ENV.PORT);
       });
     }
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
+  } catch (error) {
+    console.error("Error starting server:", error);
+    process.exit(1); // Exit the process with a failure code
   }
 };
 
