@@ -6,6 +6,7 @@ import { User } from "../models/User.model.js";
 export const inngest = new Inngest({ id: "slack-app" });
 
 //take user from clerk save it to the mongodb
+//we have to connect to db in all functions because this inngest is serverless we need to connect to the db every time before channging
 const syncUser = inngest.createFunction(
   { id: "sync-user" },
   { event: "clerk/user.created" },
@@ -27,6 +28,7 @@ const deletUserFromDB = inngest.createFunction(
   { id: "delete-user-from-db" },
   { event: "clerk/user.deleted" },
   async ({ event }) => {
+    await connectDB();
     const { id } = event.data;
     await User.deleteOne({ clerkId: id });
   }
