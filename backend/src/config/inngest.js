@@ -3,7 +3,10 @@ import { connectDB } from "./db.js";
 import { User } from "../models/User.model.js";
 
 // Create a client to send and receive events
-export const inngest = new Inngest({ id: "slack-app" });
+export const inngest = new Inngest({
+  id: "slack-app",
+  signingKey: process.env.INGEST_SIGNING_KEY,
+});
 
 //take user from clerk save it to the mongodb
 //we have to connect to db in all functions because this inngest is serverless we need to connect to the db every time before channging
