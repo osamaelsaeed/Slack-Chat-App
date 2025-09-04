@@ -1,11 +1,12 @@
 import { Inngest } from "inngest";
 import { connectDB } from "./db.js";
 import { User } from "../models/User.model.js";
+import { ENV } from "./config/env.js";
 
 // Create a client to send and receive events
 export const inngest = new Inngest({
   id: "slack-app",
-  signingKey: process.env.INGEST_SIGNING_KEY,
+  signingKey: ENV.INGEST_SIGNING_KEY,
 });
 
 //take user from clerk save it to the mongodb
