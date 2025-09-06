@@ -1,4 +1,4 @@
-<h1 align="center">✨ Slack Clone with Chat & Video Calling ✨</h1>
+<h1 align="center">✨ Slack-Chat with Real-Time Chat & Video Calling ✨</h1>
 
 Highlights:
 
