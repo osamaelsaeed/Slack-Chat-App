@@ -7,7 +7,11 @@ Highlights:
 - 📊 Polls with Multiple Options, Anonymous Mode, Suggestions & Comments
 - 🔐 Clerk Authentication with Secure User Management
 - 📨 Direct Messages & Private Channels
-- 📹 1-on-1 and Group Video Calls with Screen Sharing & Recording
+- 📹 1-on-1 and Group Video Calls with Screen Sharing & Recording<img width="1891" height="879" alt="Screenshot 2025-09-07 064819" src="https://github.com/user-attachments/assets/e310e9cd-b640-481f-910d-9ec484e16e8a" />
+<img width="1840" height="860" alt="Screenshot 2025-09-07 064831" src="https://github.com/user-attachments/assets/2b8d5226-3a62-4026-8efc-9dadc858c6b5" />
+<img width="1905" height="862" alt="Screenshot 2025-09-07 064851" src="https://github.com/user-attachments/assets/ed25f79a-f96e-4e7f-8c22-92ab763ed37e" />
+<img width="1880" height="881" alt="Screenshot 2025-09-07 064937" src="https://github.com/user-attachments/assets/082fd0d2-7dab-4b36-957d-f193c89712a5" />
+
 - 🎉 Real-time Reactions during Calls
 - 🔧 Background Jobs powered by Inngest
 - 🚨 Production-grade Error Monitoring with Sentry
